@@ -1,0 +1,49 @@
+{
+	"name": "@yourorg/transport-template",
+	"version": "1.0.0",
+	"description": "A bare-mux transport template using native fetch and WebSocket implementations",
+	"main": "./dist/index.mjs",
+	"keywords": [
+		"bare-mux",
+		"transport",
+		"proxy"
+	],
+	"author": "Your Name",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"build": "node esbuild.bundle.mjs",
+		"prepack": "npm run build",
+		"dev": "node esbuild.bundle.mjs --watch"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@mercuryworkshop/bare-mux": "^2.1.7",
+		"esbuild": "^0.25.8",
+		"esbuild-plugin-d.ts": "^1.3.1",
+		"esbuild-plugin-umd-wrapper": "^3.0.0",
+		"typescript": "^5.0.0"
+	},
+	"peerDependencies": {
+		"@mercuryworkshop/bare-mux": "^2.1.7"
+	},
+	"files": [
+		"dist",
+		"lib"
+	],
+	"exports": {
+		".": {
+			"browser": {
+				"import": "./dist/index.mjs",
+				"require": "./dist/index.js"
+			},
+			"node": {
+				"import": "./lib/index.cjs",
+				"require": "./lib/index.cjs"
+			},
+			"default": {
+				"types": "./lib/index.d.ts"
+			}
+		}
+	}
+}

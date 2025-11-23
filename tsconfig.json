@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"outDir": "lib",
+		"sourceMap": true,
+		"target": "ES2022",
+		"lib": ["DOM", "DOM.Iterable", "ES2022"],
+		"strict": true,
+		"stripInternal": true,
+		"module": "ES6",
+		"moduleResolution": "Bundler",
+		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+		"declarationMap": true,
+		"noImplicitAny": false,
+		"esModuleInterop": true,
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist", "lib"]
+}
